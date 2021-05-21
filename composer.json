@@ -10,7 +10,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "YiDeJia\\Finance\\": "./src/"
+      "Wwjpackages\\CloudFinance\\": "./src/"
     }
   },
   "require": {
@@ -19,7 +19,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "YiDeJia\\Finance\\Test\\": "test/"
+      "Wwjpackages\\CloudFinance\\Test\\": "test/"
     }
   },
   "require-dev": {
