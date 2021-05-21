@@ -1,0 +1,30 @@
+{
+  "name": "wwjpackages/cloud_finance",
+  "description": "cloud finance system SDK.",
+  "authors": [
+    {
+      "name": "wuweijie",
+      "email": "290245827@qq.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "YiDeJia\\Finance\\": "./src/"
+    }
+  },
+  "require": {
+    "guzzlehttp/guzzle": "^6.3.1|^7.0.1",
+    "pimple/pimple": "^3.2.3"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "YiDeJia\\Finance\\Test\\": "test/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8"
+  },
+  "scripts": {
+    "test": "./vendor/bin/phpunit --colors=always --testdox"
+  }
+}
