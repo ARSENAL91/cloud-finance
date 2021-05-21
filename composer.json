@@ -1,6 +1,7 @@
 {
   "name": "wwjpackages/cloud_finance",
   "description": "cloud finance system SDK.",
+  "license": "MIT",
   "authors": [
     {
       "name": "wuweijie",
