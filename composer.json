@@ -26,6 +26,10 @@
     "phpunit/phpunit": "^8"
   },
   "scripts": {
-    "test": "./vendor/bin/phpunit --colors=always --testdox"
+    "test": "./vendor/bin/phpunit --colors=always --testdox",
+    "post-autoload-dump": [
+      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+      "@php artisan package:discover"
+    ]
   }
 }
