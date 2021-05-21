@@ -9,7 +9,7 @@ use Wwjpackages\CloudFinance\Kernel\ServiceContainer;
 /**
  * Class Application
  *
- * @package Wwjpackages\SupplyChain
+ * @package Wwjpackages\CloudFinance
  * @property \GuzzleHttp\Client $httpClient                                    http客户端
  * @property \Wwjpackages\CloudFinance\Organization\Service $organization           组织
  */
