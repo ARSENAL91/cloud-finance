@@ -26,12 +26,12 @@ class BaseService
     /**
      * @var string
      */
-    protected $appId;
+    protected $compamyKey;
 
     /**
      * @var string
      */
-    protected $appSecret;
+    protected $companySecret;
 
     /**
      * @var Client
@@ -46,8 +46,8 @@ class BaseService
     public function __construct(array $config, Client $client)
     {
         $this->host = $config['host'];
-        $this->appId = $config['app_id'];
-        $this->appSecret = $config['app_secret'];
+        $this->compamyKey = $config['company_key'];
+        $this->companySecret = $config['company_secret'];
         $this->httpClient = $client;
     }
 
@@ -112,10 +112,10 @@ class BaseService
 	protected function signature(array $params)
 	{
 		$params['nonce_str'] = $this->randomStr(15);
-		$params['app_id'] = $this->appId;
+		$params['company_key'] = $this->compamyKey;
 		$str = '';
     	$this->paramsToStr($params, $str);
-		$str .= 'secret=' . $this->appSecret;
+		$str .= 'company_secret=' . $this->companySecret;
 		$signature = md5($str);
 		$params['signature'] = $signature;
     	return $params;

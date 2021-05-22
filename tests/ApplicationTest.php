@@ -13,8 +13,8 @@ class ApplicationTest extends TestCase
     {
         $config = [
             'host' => 'cw.com',
-            'app_id' => 'JFytU4V73',
-            'app_secret' => 'APUUYTnvfw97H9v3',
+            'company_key' => 'JFytU4V73',
+            'company_secret' => 'APUUYTnvfw97H9v3',
         ];
         
         $app = new Application($config);
