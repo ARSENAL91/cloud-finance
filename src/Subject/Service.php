@@ -18,6 +18,8 @@ class Service extends BaseService
             'subject_code' => $data['subject_code'] ?? [],
             'level' => $data['level'] ?? '',
             'with_attribute' => $data['with_attribute'] ?? '',
+            'page' => $data['page'] ?? 1,
+            'pagesize' => $data['pagesize'] ?? 10,
         ];
         return $this->attempt('get', self::URL, $params);
     }

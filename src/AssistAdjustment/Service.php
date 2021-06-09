@@ -14,6 +14,9 @@ class Service extends BaseService
     {
         $params = [
             'category_id' => $data['category_id'],
+            'name' => $data['name'] ?? '',
+            'page' => $data['page'] ?? 1,
+            'pagesize' => $data['pagesize'] ?? 10,
         ];
         return $this->attempt('get', self::URL, $params);
     }
