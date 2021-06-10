@@ -12,6 +12,7 @@ use Wwjpackages\CloudFinance\Kernel\ServiceContainer;
  * @package Wwjpackages\CloudFinance
  * @property \GuzzleHttp\Client $httpClient                                    http客户端
  * @property \Wwjpackages\CloudFinance\Organization\Service $organization           组织
+ * @property \Wwjpackages\CloudFinance\Wages\Service $wages           工资
  */
 class Application extends ServiceContainer
 {
@@ -31,6 +32,7 @@ class Application extends ServiceContainer
      */
     protected $deferProviders = [
         'organization' => \Wwjpackages\CloudFinance\Organization\ServiceProvider::class,
+        'wages' => \Wwjpackages\CloudFinance\Wages\ServiceProvider::class,
     ];
 
     public function __construct(array $config, array $values = [])
