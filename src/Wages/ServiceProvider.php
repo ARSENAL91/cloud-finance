@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Wwjpackages\CloudFinance\Organization;
+namespace Wwjpackages\CloudFinance\Wages;
 
 
 use Pimple\Container;
