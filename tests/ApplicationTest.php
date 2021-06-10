@@ -12,9 +12,9 @@ class ApplicationTest extends TestCase
     public function testGetApplication()
     {
         $config = [
-            'host' => 'cw.com',
-            'company_key' => 'JFytU4V73',
-            'company_secret' => 'APUUYTnvfw97H9v3',
+            'host' => 'localhost',
+            'company_key' => '1u3EDSI6sd3',
+            'company_secret' => 'b9cc0481858dbdcddb425fe2321bf5a3',
         ];
         
         $app = new Application($config);

@@ -10,12 +10,17 @@ use Wwjpackages\CloudFinance\Kernel\ServiceContainer;
  * Class Application
  *
  * @package Wwjpackages\CloudFinance
+<<<<<<< HEAD
+ * @property \GuzzleHttp\Client $httpClient                                    http客户端
+ * @property \Wwjpackages\CloudFinance\Organization\Service $organization           组织
+ * @property \Wwjpackages\CloudFinance\Wages\Service $wages           工资
+=======
  * @property \GuzzleHttp\Client                                      $httpClient             http客户端
  * @property \Wwjpackages\CloudFinance\Organization\Service          $organization           组织
  * @property \Wwjpackages\CloudFinance\Subject\Service               $subject                科目
- * @property \Wwjpackages\CloudFinance\Wages\Service                 $wages                  工资
  * @property \Wwjpackages\CloudFinance\AssistAdjustment\Service      $assistAdjustment       辅助核算
  * @property \Wwjpackages\CloudFinance\Reimburse\Service             $reimburse              报销
+>>>>>>> 6c9403d6e23ef647c22619e37483b3db74232f1a
  */
 class Application extends ServiceContainer
 {
@@ -35,10 +40,13 @@ class Application extends ServiceContainer
      */
     protected $deferProviders = [
         'organization' => \Wwjpackages\CloudFinance\Organization\ServiceProvider::class,
+<<<<<<< HEAD
         'wages' => \Wwjpackages\CloudFinance\Wages\ServiceProvider::class,
+=======
         'subject' => \Wwjpackages\CloudFinance\Subject\ServiceProvider::class,
         'assistAdjustment' => \Wwjpackages\CloudFinance\AssistAdjustment\ServiceProvider::class,
         'reimburse' => \Wwjpackages\CloudFinance\Reimburse\ServiceProvider::class,
+>>>>>>> 6c9403d6e23ef647c22619e37483b3db74232f1a
     ];
 
     public function __construct(array $config, array $values = [])
