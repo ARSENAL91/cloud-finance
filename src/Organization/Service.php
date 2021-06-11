@@ -9,6 +9,7 @@ use Wwjpackages\CloudFinance\Kernel\BaseService;
 class Service extends BaseService
 {
     const SyncEmployee = '/api/api/organizations/employees/sync';
+    const SyncOrganization = '/api/api/organizations/organization/sync';
 
     public function syncEmployee(array $data): array
     {
@@ -25,5 +26,15 @@ class Service extends BaseService
             'comments' => $data['comments'] ?: '',
         ];
         return $this->attempt('post', self::SyncEmployee, $params);
+    }
+
+
+    public function syncOrganization(array $data): array
+    {
+        $params = [
+            'name' => $data['name'],
+            'sync_unique_sign' => $data['sync_unique_sign'],
+        ];
+        return $this->attempt('post', self::SyncOrganization, $params);
     }
 }
