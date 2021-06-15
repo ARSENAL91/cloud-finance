@@ -19,6 +19,7 @@ class Service extends BaseService
                 'real_name' => $v['real_name'],
                 'employee_no' => $v['employee_no'],
                 'organization_name' => $v['organization_name'],
+                'organization_sync_unique_sign' => $v['organization_sync_unique_sign'],
                 'job_title' => $v['job_title'],
                 'id_card' => $v['id_card'],
                 'mobile' => $v['mobile'],
