@@ -13,18 +13,21 @@ class Service extends BaseService
 
     public function syncEmployee(array $data): array
     {
-        $params = [
-            'real_name' => $data['real_name'],
-            'employee_no' => $data['employee_no'],
-            'organization_name' => $data['organization_name'],
-            'job_title' => $data['job_title'],
-            'id_card' => $data['id_card'],
-            'mobile' => $data['mobile'],
-            'status' => $data['status'],
-            'entry_date' => $data['entry_date'],
-            'dimission_date' => $data['dimission_date'] ?: '',
-            'comments' => $data['comments'] ?: '',
-        ];
+        $params = ['list' => []];
+        foreach ($data as $v) {
+            $params['list'][] = [
+                'real_name' => $v['real_name'],
+                'employee_no' => $v['employee_no'],
+                'organization_name' => $v['organization_name'],
+                'job_title' => $v['job_title'],
+                'id_card' => $v['id_card'],
+                'mobile' => $v['mobile'],
+                'status' => $v['status'],
+                'entry_date' => $v['entry_date'],
+                'dimission_date' => $v['dimission_date'] ?: '0000-00-00',
+            ];
+        }
+
         return $this->attempt('post', self::SyncEmployee, $params);
     }
 

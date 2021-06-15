@@ -12,31 +12,43 @@ class EmployeeTest extends TestCase
     public function testGetApplication()
     {
         $config = [
-            'host' => 'localhost',
-            'company_key' => '1KM3yA5yPWq',
-            'company_secret' => 'f8183b73ba03b53ba5aa3c80508dba53',
+            'host' => '127.0.0.1',
+            'company_key' => '24eIcUDAKvcS',
+            'company_secret' => '1c6d3994ab274af36093b7eebb7e1742',
         ];
         $app = new Application($config);
+        $arr[] = [
+            'real_name' => '123',
+            'employee_no' => '12313',
+            'organization_name' => '技术部',
+            'job_title' => '侧上位',
+            'id_card' => '333222222222222222',
+            'mobile' => '1323443123',
+            'status' => '在职',
+            'entry_date' => '2000-01-01',
+            'dimission_date' => '',
+            'comments' => '',
+        ];
+        $arr[] = [
+            'real_name' => '邬伟杰',
+            'employee_no' => '2221',
+            'organization_name' => '技术部',
+            'job_title' => '侧上位',
+            'id_card' => '333222223422222',
+            'mobile' => '1323443153',
+            'status' => '在职',
+            'entry_date' => '2000-01-01',
+            'dimission_date' => '',
+            'comments' => '',
+        ];
 
         try {
-            $result = $app->organization->syncEmployee([
-                'real_name' =>'123',
-                'employee_no' => '12313',
-                'organization_name' => 'xxx222',
-                'job_title' =>'侧上位',
-                'id_card' => '333222222222222222',
-                'mobile' => '1323443123',
-                'status' => '在职',
-                'entry_date' => '2000-01-01',
-                'dimission_date' => '',
-                'comments' =>  '',
-            ]);
-            $res  = $this->assertIsArray($result);
+            $result = $app->organization->syncEmployee($arr);
+            $res = $this->assertIsArray($result);
         } catch (\Wwjpackages\CloudFinance\Exception\RequestFailException $e) {
             $this->assertTrue(false, $e->getMessage());
         }
     }
-
 
 
 }
