@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Wwjpackages\CloudFinance\Subject;
+namespace Wwjpackages\CloudFinance\Property;
 
 
 use Wwjpackages\CloudFinance\Kernel\BaseService;

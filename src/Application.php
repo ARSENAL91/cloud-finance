@@ -16,6 +16,7 @@ use Wwjpackages\CloudFinance\Kernel\ServiceContainer;
  * @property \Wwjpackages\CloudFinance\Wages\Service                 $wages                  工资
  * @property \Wwjpackages\CloudFinance\AssistAdjustment\Service      $assistAdjustment       辅助核算
  * @property \Wwjpackages\CloudFinance\Reimburse\Service             $reimburse              报销
+ * @property \Wwjpackages\CloudFinance\Property\Service              $property               固定资产
  */
 class Application extends ServiceContainer
 {
@@ -39,6 +40,7 @@ class Application extends ServiceContainer
         'subject' => \Wwjpackages\CloudFinance\Subject\ServiceProvider::class,
         'assistAdjustment' => \Wwjpackages\CloudFinance\AssistAdjustment\ServiceProvider::class,
         'reimburse' => \Wwjpackages\CloudFinance\Reimburse\ServiceProvider::class,
+        'property' => \Wwjpackages\CloudFinance\Property\ServiceProvider::class,
     ];
 
     public function __construct(array $config, array $values = [])
