@@ -13,7 +13,7 @@ class Service extends BaseService
     public function sync(array $data): array
     {
         $params = [
-            'booked_time' => $data['buy_date'] ?? '',
+            'booked_time' => $data['buy_date'] ?? '' ,
             'sync_type' => $data['sync_type'] ?? 'n',
             'property' => $data['property'] ?? [],
             'purchase' => $data['purchase'] ?? [],
