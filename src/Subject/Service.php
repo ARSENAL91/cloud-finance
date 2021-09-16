@@ -9,6 +9,8 @@ use Wwjpackages\CloudFinance\Kernel\BaseService;
 class Service extends BaseService
 {
     const URL = '/api/api/subjects';
+    const INFOURL = '/api/api/settings/subjects/getSubjectInfo';
+
 
     public function index(array $data): array
     {
@@ -22,5 +24,13 @@ class Service extends BaseService
             'pagesize' => $data['pagesize'] ?? 10,
         ];
         return $this->attempt('get', self::URL, $params);
+    }
+
+    public function getInfo(array $data): array
+    {
+        $params = [
+            'subject_ids' => $data['subject_ids'] ?? [],
+        ];
+        return $this->attempt('post', self::INFOURL, $params);
     }
 }
