@@ -13,7 +13,9 @@ class Service extends BaseService
     public function syncDetail(array $data): array
     {
         $params = [
-            'account'=>$data['account']
+            'account'=>$data['account'],
+            'acc_name'=>$data['acc_name'],
+            'bank_name'=>$data['bank_name'],
         ];
         foreach ($data['detail'] as $v){
             $params['detail'][] = [

@@ -18,6 +18,8 @@ class BankDetailTest extends TestCase
         ];
         $app = new Application($config);
         $arr['account'] = 123;
+        $arr['acc_name'] = '123';
+        $arr['bank_name'] = '中国银行';
         $arr['detail'][] = [
             'serial_code' => '123',
             'the_date' =>  '2021-08-01',
