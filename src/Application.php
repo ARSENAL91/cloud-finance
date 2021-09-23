@@ -17,7 +17,7 @@ use Wwjpackages\CloudFinance\Kernel\ServiceContainer;
  * @property \Wwjpackages\CloudFinance\AssistAdjustment\Service $assistAdjustment       辅助核算
  * @property \Wwjpackages\CloudFinance\Reimburse\Service $reimburse              报销
  * @property \Wwjpackages\CloudFinance\Property\Service $property               固定资产
- * @property \Wwjpackages\CloudFinance\bankDetail\Service $bankDetail             银行流水
+ * @property \Wwjpackages\CloudFinance\BankDetail\Service $bankDetail             银行流水
  */
 class Application extends ServiceContainer
 {
