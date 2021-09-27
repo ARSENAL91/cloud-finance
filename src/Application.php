@@ -42,7 +42,7 @@ class Application extends ServiceContainer
         'assistAdjustment' => \Wwjpackages\CloudFinance\AssistAdjustment\ServiceProvider::class,
         'reimburse' => \Wwjpackages\CloudFinance\Reimburse\ServiceProvider::class,
         'property' => \Wwjpackages\CloudFinance\Property\ServiceProvider::class,
-        'bankDetail' => \Wwjpackages\CloudFinance\bankDetail\ServiceProvider::class,
+        'bankDetail' => \Wwjpackages\CloudFinance\BankDetail\ServiceProvider::class,
     ];
 
     public function __construct(array $config, array $values = [])
