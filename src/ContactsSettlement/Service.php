@@ -13,7 +13,8 @@ class Service extends BaseService
     public function index(array $data): array
     {
         $params = [
-            'key' => $data['key'] ?? '',
+            'key' => $data['key'] ?? '',//公司秘钥 字符串
+            'the_date' => $data['the_date'] ?? [],//日期数组区间
         ];
         return $this->attempt('post', self::URL, $params);
     }
