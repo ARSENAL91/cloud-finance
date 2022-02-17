@@ -13,8 +13,8 @@ class Service extends BaseService
     {
         $params = [
             'company_name' => $data['company_name'] ?? '',//公司名称
-            'contract_type' => $data['contract_type'] ?? [],//类型id
-            'product_type' => $data['product_type'] ?? [],//类型id
+            'receipt_type' => $data['receipt_type'] ?? [],//单据
+            'product_kind' => $data['product_kind'] ?? [],//类型
             'the_month' => $data['the_month'] ?? [],//日期
         ];
         return $this->attempt('post', self::URL, $params);
