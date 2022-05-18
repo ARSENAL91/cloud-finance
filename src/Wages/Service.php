@@ -58,6 +58,7 @@ class Service extends BaseService
                 'company_amount' => $fund['company_amount'],
             ];
         }
+        $params['funds'] = json_encode($params['funds']);
         return $this->attempt('post', self::SYNC_PROVIDENT_FUND, $params);
     }
 }
