@@ -8,8 +8,15 @@ use Wwjpackages\CloudFinance\Kernel\BaseService;
 
 class Service extends BaseService
 {
-    const SyncWages = '/api/api/wages/sync';
+    const SYNC_WAGES = '/api/api/wages/sync';
+    const SYNC_PROVIDENT_FUND = '/api/api/wages/providentFund/sync';
 
+    /**
+     *
+     * @param array $data
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
     public function syncWages(array $data): array
     {
         $params = [];
@@ -30,6 +37,27 @@ class Service extends BaseService
             ];
         }
 
-        return $this->attempt('post', self::SyncWages, $params);
+        return $this->attempt('post', self::SYNC_WAGES, $params);
+    }
+
+    /**
+     * 公积金同步
+     * @param array $data
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function syncProvidentFund(array $data): array
+    {
+        $params['the_month'] = $data['the_month'];
+        foreach ($data['funds'] as $fund) {
+            $params['funds'][] = [
+                'department_name' => $fund['department_name'],
+                'employee_name' => $fund['employee_name'],
+                'id_card' => $fund['id_card'],
+                'person_amount' => $fund['person_amount'],
+                'company_amount' => $fund['company_amount'],
+            ];
+        }
+        return $this->attempt('post', self::SYNC_PROVIDENT_FUND, $params);
     }
 }
