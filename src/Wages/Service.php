@@ -9,7 +9,7 @@ use Wwjpackages\CloudFinance\Kernel\BaseService;
 class Service extends BaseService
 {
     const SYNC_WAGES = '/api/api/wages/sync';
-    const SYNC_PROVIDENT_FUND = '/api/api/wages/providentFund/sync';
+    const SYNC_PROVIDENT_FUND = '/api/api/wages/providentFunds/sync';
 
     /**
      *
