@@ -13,11 +13,12 @@ class Service extends BaseService
     public function syncDetail(array $data): array
     {
         $params = [
-            'account'=>$data['account'],
-            'acc_name'=>$data['acc_name'],
-            'bank_name'=>$data['bank_name'],
+            'account' => $data['account'],
+            'acc_name' => $data['acc_name'],
+            'bank_name' => $data['bank_name'],
+            'receive_way_id' => $data['receive_way_id'] ?: 0,
         ];
-        foreach ($data['detail'] as $v){
+        foreach ($data['detail'] as $v) {
             $params['detail'][] = [
                 'serial_code' => $v['serial_code'],
                 'the_date' => $v['the_date'],
@@ -37,7 +38,7 @@ class Service extends BaseService
                 'unique_id' => $v['unique_id'],
             ];
         }
-        $condition = ['data'=>json_encode($params)];
+        $condition = ['data' => json_encode($params)];
         return $this->attempt('post', self::SyncDetail, $condition);
     }
 }
