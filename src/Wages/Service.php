@@ -10,6 +10,7 @@ class Service extends BaseService
 {
     const SYNC_WAGES = '/api/api/wages/sync';
     const SYNC_PROVIDENT_FUND = '/api/api/wages/providentFunds/sync';
+    const SYNC_SOCIAL_SECURITY_FUND = '/api/api/wages/socialSecurityFunds/sync';
 
     /**
      *
@@ -60,5 +61,33 @@ class Service extends BaseService
         }
         $params['funds'] = json_encode($params['funds']);
         return $this->attempt('post', self::SYNC_PROVIDENT_FUND, $params);
+    }
+
+    public function syncSocialSecurityFund(array $data)
+    {
+        $params['the_month'] = $data['the_month'];
+        foreach ($data['funds'] as $fund) {
+            $params['funds'][] = [
+                'department_name' => $fund['department_name'],
+                'employee_name' => $fund['employee_name'],
+                'id_card' => $fund['id_card'],
+                'retirement_person_amount' => $fund['retirement_person_amount'],
+                'retirement_company_amount' => $fund['retirement_company_amount'],
+                'work_injury_person_amount' => $fund['work_injury_person_amount'],
+                'work_injury_company_amount' => $fund['work_injury_company_amount'],
+                'unemployment_person_amount' => $fund['unemployment_person_amount'],
+                'unemployment_company_amount' => $fund['unemployment_company_amount'],
+                'social_medicine_person_amount' => $fund['social_medicine_person_amount'],
+                'social_medicine_company_amount' => $fund['social_medicine_company_amount'],
+                'disease_medicine_person_amount' => $fund['disease_medicine_person_amount'],
+                'disease_medicine_company_amount' => $fund['disease_medicine_company_amount'],
+                'birth_person_amount' => $fund['birth_person_amount'],
+                'birth_company_amount' => $fund['birth_company_amount'],
+                'total_person_amount' => $fund['total_person_amount'],
+                'total_company_amount' => $fund['total_company_amount'],
+            ];
+        }
+        $params['funds'] = json_encode($params['funds']);
+        return $this->attempt('post', self::SYNC_SOCIAL_SECURITY_FUND, $params);
     }
 }
