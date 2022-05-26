@@ -16,7 +16,7 @@ class Service extends BaseService
             'key' => $data['key'] ?? '',//公司秘钥 字符串
             'the_date' => $data['the_date'] ?? [],//日期数组区间
         ];
-        return $this->attempt('post', self::URL, $params);
+        return $this->attempt('get', self::URL, $params);
     }
     public function monthData(array $data): array
     {
@@ -25,7 +25,7 @@ class Service extends BaseService
             'start_date' => $data['start_date'] ?$data['start_date']: '0000-00-00',
             'end_date' => $data['end_date'] ? $data['end_date']: '0000-00-00',
         ];
-        return $this->attempt('post', self::URLMONTH, $params);
+        return $this->attempt('get', self::URLMONTH, $params);
     }
 
 }

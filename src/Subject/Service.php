@@ -31,6 +31,6 @@ class Service extends BaseService
         $params = [
             'subject_ids' => $data['subject_ids'] ?? [],
         ];
-        return $this->attempt('post', self::INFOURL, $params);
+        return $this->attempt('get', self::INFOURL, $params);
     }
 }

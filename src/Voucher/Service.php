@@ -17,7 +17,7 @@ class Service extends BaseService
             'product_kind' => $data['product_kind'] ?? [],//类型
             'the_month' => $data['the_month'] ?? [],//日期
         ];
-        return $this->attempt('post', self::URL, $params);
+        return $this->attempt('get', self::URL, $params);
     }
 
 }
