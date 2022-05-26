@@ -63,7 +63,13 @@ class Service extends BaseService
         return $this->attempt('post', self::SYNC_PROVIDENT_FUND, $params);
     }
 
-    public function syncSocialSecurityFund(array $data)
+    /**
+     * 社保同步
+     * @param array $data
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function syncSocialSecurityFund(array $data): array
     {
         $params['the_month'] = $data['the_month'];
         foreach ($data['funds'] as $fund) {
