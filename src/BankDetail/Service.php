@@ -36,6 +36,7 @@ class Service extends BaseService
                 'comments' => $v['comments'],
                 'use_way' => $v['use_way'],
                 'unique_id' => $v['unique_id'],
+                'reimbursement' => $v['reimbursement'] ?: [],
             ];
         }
         $condition = ['data' => json_encode($params)];
