@@ -91,6 +91,7 @@ class Service extends BaseService
                 'birth_company_amount' => $fund['birth_company_amount'],
                 'total_person_amount' => $fund['total_person_amount'],
                 'total_company_amount' => $fund['total_company_amount'],
+                'city' => $fund['city'],
             ];
         }
         $params['funds'] = json_encode($params['funds']);
