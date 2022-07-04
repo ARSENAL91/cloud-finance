@@ -13,8 +13,8 @@ class SheetTest extends TestCase
     {
         $config = [
             'host' => 'localhost',
-            'company_key' => '1u3EDSI6sd3',
-            'company_secret' => 'b9cc0481858dbdcddb425fe2321bf5a3',
+            'company_key' => '23DXuNmq2rRS',
+            'company_secret' => '0054dd262ce9a9655ee5d1be25323098',
         ];
 
         $app = new Application($config);
@@ -34,7 +34,6 @@ class SheetTest extends TestCase
             $result = $app->sheet->balanceSheet([
                 'the_month' => '2022-01-01',
             ]);
-            var_dump($result);
             $this->assertIsArray($result);
         } catch (\Wwjpackages\CloudFinance\Exception\RequestFailException $e) {
             $this->assertTrue(false, $e->getMessage());
