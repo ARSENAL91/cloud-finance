@@ -21,6 +21,7 @@ use Wwjpackages\CloudFinance\Kernel\ServiceContainer;
  * @property \Wwjpackages\CloudFinance\ContactsSettlement\Service $contactsSettlement   总部往来结算数据
  * @property \Wwjpackages\CloudFinance\Voucher\Service $voucher   凭证
  * @property \Wwjpackages\CloudFinance\Sheet\Service $sheet   报表
+ * @property \Wwjpackages\CloudFinance\AccountingBook\Service $accountingBook   账簿
  */
 class Application extends ServiceContainer
 {
@@ -49,6 +50,7 @@ class Application extends ServiceContainer
         'contactsSettlement' => \Wwjpackages\CloudFinance\ContactsSettlement\ServiceProvider::class,
         'voucher' => \Wwjpackages\CloudFinance\Voucher\ServiceProvider::class,
         'sheet' => \Wwjpackages\CloudFinance\Sheet\ServiceProvider::class,
+        'accountingBook' => \Wwjpackages\CloudFinance\AccountingBook\ServiceProvider::class,
     ];
 
     public function __construct(array $config, array $values = [])
