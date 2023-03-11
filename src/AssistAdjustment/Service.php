@@ -17,6 +17,7 @@ class Service extends BaseService
             'name' => $data['name'] ?? '',
             'page' => $data['page'] ?? 1,
             'pagesize' => $data['pagesize'] ?? 10,
+            'status' => $data['status'] ?? 'used',
         ];
         return $this->attempt('get', self::URL, $params);
     }
