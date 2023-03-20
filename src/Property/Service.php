@@ -14,7 +14,7 @@ class Service extends BaseService
     public function sync(array $data): array
     {
         $params = [
-            'booked_time' => $data['booked_time'] ?? '' ,
+            'booked_time' => $data['booked_time'] ?? '',
             'sync_type' => $data['sync_type'] ?? 'n',
             'property' => $data['property'] ?? [],
             'purchase' => $data['purchase'] ?? [],
@@ -22,11 +22,12 @@ class Service extends BaseService
         return $this->attempt('post', self::URL, $params);
     }
 
+    
     public function getSumDepreciationAmountToCw(array $data): array
     {
         $params = [
-            'the_month' => $data['the_month'] ,
-            'account_set_month' => $data['the_month'] ,
+            'the_month' => $data['the_month'],
+            'account_set_month' => $data['the_month'],
         ];
         return $this->attempt('get', self::DepreciationAmount, $params);
     }
