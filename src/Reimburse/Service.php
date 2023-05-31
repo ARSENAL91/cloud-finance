@@ -20,10 +20,10 @@ class Service extends BaseService
     public function sync(array $data): array
     {
         $params = [
-            'reimburse' => $data['reimburse'] ?? [],
+            'reimburse' => $data['reimburse'] ?? '',
             'code' => $data['code'],
             'config_name' => $data['config_name'] ?? '',
-            'voucher_records' => $data['voucher_records'] ?? [],
+            'voucher_records' => $data['voucher_records'] ?? '',
             'binding_code' => $data['binding_code'] ?? '',
         ];
         return $this->attempt('post', self::SYNC, $params);
