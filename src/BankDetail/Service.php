@@ -56,7 +56,8 @@ class Service extends BaseService
         foreach ($data['detail'] as $v) {
             $params['detail'][] = [
                 'serial_code' => $v['serial_code'],
-                'inner_no' => $v['inner_no']?:'',
+                'inner_no' => $v['inner_no'] ?: '',
+                'is_detail_flag' => $v['is_detail_flag'],
                 'the_date' => $v['the_date'],
                 'url' => $v['url'],
             ];
