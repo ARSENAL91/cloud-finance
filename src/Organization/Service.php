@@ -24,6 +24,7 @@ class Service extends BaseService
                 'id_card' => $v['id_card'],
                 'mobile' => $v['mobile'],
                 'status' => $v['status'],
+                'gender' => $v['gender'],
                 'entry_date' => $v['entry_date'],
                 'dimission_date' => $v['dimission_date'] ?: '0000-00-00',
             ];
