@@ -9,6 +9,7 @@ use Wwjpackages\CloudFinance\Kernel\BaseService;
 class Service extends BaseService
 {
     const SYNC_WAGES = '/api/api/wages/sync';
+    const SYNC_ANNUAL_BONUS = '/api/api/wages/annual/bonus/sync';
     const SYNC_PROVIDENT_FUND = '/api/api/wages/providentFunds/sync';
     const SYNC_SOCIAL_SECURITY_FUND = '/api/api/wages/socialSecurityFunds/sync';
 
@@ -40,6 +41,23 @@ class Service extends BaseService
 
         return $this->attempt('post', self::SYNC_WAGES, $params);
     }
+
+    /**
+     *
+     * @param array $data
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function syncAnnualBonus(array $data): array
+    {
+        $params = [];
+        foreach ($data as $v){
+            $params['list'][] = $v;
+        }
+
+        return $this->attempt('post', self::SYNC_ANNUAL_BONUS, $params);
+    }
+
 
     /**
      * 公积金同步
