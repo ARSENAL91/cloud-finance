@@ -30,6 +30,7 @@ class Service extends BaseService
     {
         $params = [
             'subject_ids' => $data['subject_ids'] ?? [],
+            'subject_codes' => $data['subject_codes'] ?? [],
         ];
         return $this->attempt('get', self::INFOURL, $params);
     }
